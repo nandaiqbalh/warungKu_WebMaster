@@ -20,3 +20,5 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Api\UserController;
 Route::post('login', 'App\Http\Controllers\Api\UserController@login');
+Route::post('register', 'App\Http\Controllers\Api\UserController@register');
+
