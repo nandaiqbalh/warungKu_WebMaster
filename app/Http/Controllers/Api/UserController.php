@@ -31,7 +31,8 @@ class UserController extends Controller
         $validasi = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required|unique:users',
-            'password' => 'required|min:6'
+            'phone' => 'required|unique:users',
+            'password' => 'required|min:8'
         ]);
 
         if($validasi->fails()){
@@ -46,7 +47,7 @@ class UserController extends Controller
         if($user){
             return response()->json([
                 'success' => 1,
-                'message' => 'Selamat datang, ' .$user->name .'! Register berhasil!',
+                'message' => 'Selamat datang, ' .$user->name .'! Registrasi berhasil!',
                 'user' => $user
             ]);
         }
