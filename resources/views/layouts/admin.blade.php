@@ -92,32 +92,32 @@
                with font-awesome or any other icon font library -->
 
             <li class="nav-item">
-              <a href="pages/widgets.html" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
+              <a href="{{ route('home') }}" class="nav-link">
+                <i class="nav-icon fas fa-columns"></i>
                 <p>
-                  Widgets
+                  Dashboard
                 </p>
               </a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-copy"></i>
+                <i class="nav-icon fas fa-cog"></i>
                 <p>
-                  Layout Options
+                  Setting
                   <i class="fas fa-angle-left right"></i>
                 </p>
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="pages/layout/top-nav.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Top Navigation</p>
+                  <a href="{{ route('user.index') }}" class="nav-link">
+                    <i class="far fa-user nav-icon"></i>
+                    <p>User</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Top Navigation + Sidebar</p>
+                    <i class="far fa-dot-circle nav-icon"></i>
+                    <p>Others</p>
                   </a>
                 </li>
               </ul>
@@ -127,7 +127,6 @@
               <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                 <i class="nav-icon fas fa-power-off"></i>
-
                 {{ __('Logout') }}
               </a>
 
