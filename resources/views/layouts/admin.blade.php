@@ -99,6 +99,16 @@
                 </p>
               </a>
             </li>
+
+            <li class="nav-item">
+              <a href="{{ route('product.index') }}" class="nav-link">
+                <i class="nav-icon fas fa-shopping-bag"></i>
+                <p>
+                  Product
+                </p>
+              </a>
+            </li>
+
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-cog"></i>
@@ -195,6 +205,13 @@
   <script src="{{ asset('dist/js/demo.js') }}"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
-</body>
+  <script src="{{ asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      bsCustomFileInput.init();
+    });
+  </script>
 
-</html>
+  < /body>
+
+    < /html>
