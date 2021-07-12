@@ -34,7 +34,10 @@
                         <tr>
                             <th style="width: 10px">Id</th>
                             <th>Nama</th>
-                            <th>Email</th>
+                            <th>Harga</th>
+                            <th>Deskripsi</th>
+                            <th>Kategori</th>
+                            <th>Gambar</th>
                             <th style="width: 40px">Action</th>
                         </tr>
                     </thead>
@@ -42,8 +45,11 @@
                         @foreach($listUser as $data)
                         <tr>
                             <td>{{ $data-> id}}</td>
-                            <td>{{ $data-> name}}</td>
-                            <td>{{ $data-> email}}</td>
+                            <td>{{ $data-> nama}}</td>
+                            <td>{{ "Rp ". number_format($data-> harga)}}</td>
+                            <td>{{ $data-> deskripsi}}</td>
+                            <td>{{ $data-> kategori_id}}</td>
+                            <td>{{ $data-> gambar}}</td>
                             <td>
                                 <a href="#">
                                     <i class="fa fa-edit blue"></i>
@@ -73,7 +79,7 @@
                         </button>
                     </div>
 
-                    <form method="POST" action="{{ route('product.index') }}">
+                    <form method="POST" action="{{ route('product.store') }}" role="form" enctype="multipart/form-data">
                         @csrf
 
                         <div class="modal-body">
@@ -96,11 +102,11 @@
                                         <div class="form-group">
                                             <label>Pilih Kategori</label>
                                             <select class="form-control" name="kategori_id">
-                                                <option>option 1</option>
-                                                <option>option 2</option>
-                                                <option>option 3</option>
-                                                <option>option 4</option>
-                                                <option>option 5</option>
+                                                <option value="1">option 1</option>
+                                                <option value="1">option 2</option>
+                                                <option value="1">option 3</option>
+                                                <option value="1">option 4</option>
+                                                <option value="1">option 5</option>
                                             </select>
                                         </div>
                                     </div>

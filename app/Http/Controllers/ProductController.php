@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\User;
 
+
 class ProductController extends Controller
 {
     /**
@@ -15,7 +16,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $arrayUser['listUser'] = User::all();
+        $arrayUser['listUser'] = Product::all();
         return view('product')->with($arrayUser);
     }
 
@@ -37,8 +38,25 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
-        die();
+        // dd($request->all());
+        // die();
+
+        // ini menghandle uploading image ke dalam database
+        $fileName = '';
+        if ($request->gambar->getClientOriginalName()) {
+            // ubah spaci jadi gaada spasi
+            $file = str_replace(' ', '', $request->gambar->getClientOriginalName());
+            // get date                 supaya namanya ngga sama dikasih random
+            $fileName = date('mYdHs') . rand(1, 999) . '_' . $file;
+            $request->gambar->storeAs('public/product', $fileName);
+        }
+
+        $product = Product::create(array_merge($request->all(), [
+            // informasi (request data)  berupa "image" kita ganti jadi fileName
+            'gambar' => $fileName
+        ]));
+
+        return redirect('product');
     }
 
     /**
