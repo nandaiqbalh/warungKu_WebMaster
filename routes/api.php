@@ -19,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 //});
 
 use App\Http\Controllers\Api\UserController;
+
 Route::post('login', 'App\Http\Controllers\Api\UserController@login');
 Route::post('register', 'App\Http\Controllers\Api\UserController@register');
 
+use App\Http\Controllers\Api\ProductController;
+
+Route::get('product', 'App\Http\Controllers\Api\ProductController@index');
